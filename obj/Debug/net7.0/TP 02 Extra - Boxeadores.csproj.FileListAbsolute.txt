@@ -1,0 +1,5 @@
+Z:\4to\PROGRAMACION\TP02_Extra Boxeadores\obj\Debug\net7.0\TP 02 Extra - Boxeadores.csproj.AssemblyReference.cache
+Z:\4to\PROGRAMACION\TP02_Extra Boxeadores\obj\Debug\net7.0\TP 02 Extra - Boxeadores.GeneratedMSBuildEditorConfig.editorconfig
+Z:\4to\PROGRAMACION\TP02_Extra Boxeadores\obj\Debug\net7.0\TP 02 Extra - Boxeadores.AssemblyInfoInputs.cache
+Z:\4to\PROGRAMACION\TP02_Extra Boxeadores\obj\Debug\net7.0\TP 02 Extra - Boxeadores.AssemblyInfo.cs
+Z:\4to\PROGRAMACION\TP02_Extra Boxeadores\obj\Debug\net7.0\TP 02 Extra - Boxeadores.csproj.CoreCompileInputs.cache
