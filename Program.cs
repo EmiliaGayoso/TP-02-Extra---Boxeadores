@@ -6,7 +6,8 @@ class Program
         int num,peso, pG, vP, random;
         double skill1=0,skill2=0;
         string nom, pais; 
-        
+        Boxeador a=null;
+        Boxeador b=null;
         do
         {
             Menu();
@@ -15,81 +16,91 @@ class Program
             {
                 case 1:
 
-                nom=IngresarCadena("Ingrese nombre de BOXEADOR 1: ");
-                pais= IngresarCadena("¿Donde vive su BOXEADOR?: ");
-                peso= IngresarEnteroPositivo("Peso (num en Kg):");
+                    nom=IngresarCadena("Ingrese nombre de BOXEADOR 1: ");
+                    pais= IngresarCadena("¿Donde vive su BOXEADOR?: ");
+                    peso= IngresarEnteroPositivo("Peso (num en Kg):");
                 
-                pG=IngresarEnteroPositivo("Potencia del GOLPE: ");
-                while(pG<=0 || pG>100)
-                {
-                    pG=IngresarEnteroPositivo("ERROR-valor fuera de rango (1-100)\nPotencia del GOLPE: ");
-                }
+                    pG=IngresarEnteroPositivo("Potencia del GOLPE: ");
+                    while(pG<=0 || pG>100)
+                    {
+                        pG=IngresarEnteroPositivo("ERROR-valor fuera de rango (1-100)\nPotencia del GOLPE: ");
+                    }
                 
-                vP=IngresarEnteroPositivo("VELOCIDAD de piernas:");
-                while(vP<=0 || vP>100)
-                {
-                    vP=IngresarEnteroPositivo("ERROR-valor fuera de rango (1-100)\nVELOCIDAD de piernas:");
+                    vP=IngresarEnteroPositivo("VELOCIDAD de piernas:");
+                    while(vP<=0 || vP>100)
+                    {
+                        vP=IngresarEnteroPositivo("ERROR-valor fuera de rango (1-100)\nVELOCIDAD de piernas:");
+                    }
                 
-                }
-                
-                Boxeador a= new Boxeador(nom,pais,peso,pG,vP);
-                random= RandomNum(1,10);
-                skill1= a.ObtenerSkill(a.PotenciaGolpes,a.VelocidadPiernas,random);
+                    a= new Boxeador(nom,pais,peso,pG,vP);
+                    Console.WriteLine("CREADOR BOXEADOR 1");
+                    random= RandomNum(1,10);
+                    skill1= a.ObtenerSkill(a.PotenciaGolpes,a.VelocidadPiernas,random);
+
+
                 break;
                 
                 case 2:
 
-                nom=IngresarCadena("Ingrese nombre de BOXEADOR 2: ");
-                pais= IngresarCadena("¿Donde vive su BOXEADOR?: ");
-                peso= IngresarEnteroPositivo("Peso (num en Kg):");
+                    nom=IngresarCadena("Ingrese nombre de BOXEADOR 2: ");
+                    pais= IngresarCadena("¿Donde vive su BOXEADOR?: ");
+                    peso= IngresarEnteroPositivo("Peso (num en Kg):");
                 
-                pG=IngresarEnteroPositivo("Potencia del GOLPE: ");
-                while(pG<=0 || pG>100)
-                {
-                    pG=IngresarEnteroPositivo("ERROR-valor fuera de rango (1-100)\nPotencia del GOLPE: ");
-                }
+                    pG=IngresarEnteroPositivo("Potencia del GOLPE: ");
+                    while(pG<=0 || pG>100)
+                    {
+                        pG=IngresarEnteroPositivo("ERROR-valor fuera de rango (1-100)\nPotencia del GOLPE: ");
+                    }
                 
-                vP=IngresarEnteroPositivo("VELOCIDAD de piernas:");
-                while(vP<=0 || vP>100)
-                {
-                    vP=IngresarEnteroPositivo("ERROR-valor fuera de rango (1-100)\nVELOCIDAD de piernas:");
-                }
+                    vP=IngresarEnteroPositivo("VELOCIDAD de piernas:");
+                    while(vP<=0 || vP>100)
+                    {
+                        vP=IngresarEnteroPositivo("ERROR-valor fuera de rango (1-100)\nVELOCIDAD de piernas:");
+                    }
                 
-                Boxeador b= new Boxeador(nom,pais,peso,pG,vP);
-                random= RandomNum(1,10);
-                skill2= b.ObtenerSkill(b.PotenciaGolpes,b.VelocidadPiernas,random);
+                    b= new Boxeador(nom,pais,peso,pG,vP);
+                    Console.WriteLine("CREADOR BOXEADOR 2");
+                    random= RandomNum(1,10);
+                    skill2= b.ObtenerSkill(b.PotenciaGolpes,b.VelocidadPiernas,random);
+
                 break;
                 
                 case 3:
                 
-                if(skill1>skill2 && skill1-skill2>=30)
-                {
-                    Console.WriteLine("Ganó "+ a.Nombre + " por KO");
-                }
-                else if( skill2>skill1 && skill2-skill1>=30)
-                {
-                    Console.WriteLine("Ganó "+ b.Nombre + " por KO");
-                }
-                else if(skill1>skill2 && skill1-skill2>=10 && skill1-skill2<30)
-                {
-                    Console.WriteLine("Ganó " + a.Nombre +" por puntos en fallo unánime");
-                }
-                else if(skill2>skill1 && skill2-skill1>=10 && skill2-skill1<30)
-                {
-                    Console.WriteLine("Ganó " + b.Nombre +" por puntos en fallo unánime");
-                }
-                else if(skill1>skill2 && skill1-skill2<10)
-                {
-                    Console.WriteLine("Ganó " + a.Nombre +" por puntos en fallo dividido")
-                }
-                else
-                {
-                    Console.WriteLine("Ganó " + b.Nombre +" por puntos en fallo dividido")
-                }
+                    if(a!=null && b!=null)
+                    {
+                        if(skill1>skill2 && skill1-skill2>=30)
+                        {
+                            Console.WriteLine("Ganó "+ a.Nombre + " por KO");
+                        }
+                        else if( skill2>skill1 && skill2-skill1>=30)
+                        {
+                            Console.WriteLine("Ganó "+ b.Nombre + " por KO");
+                        }
+                        else if(skill1>skill2 && skill1-skill2>=10 && skill1-skill2<30)
+                        {
+                            Console.WriteLine("Ganó " + a.Nombre +" por puntos en fallo unánime");
+                        }
+                        else if(skill2>skill1 && skill2-skill1>=10 && skill2-skill1<30)
+                        {
+                            Console.WriteLine("Ganó " + b.Nombre +" por puntos en fallo unánime");
+                        }
+                        else if(skill1>skill2 && skill1-skill2<10)
+                        {
+                            Console.WriteLine("Ganó " + a.Nombre +" por puntos en fallo dividido");
+                        }
+                        else
+                        {
+                        Console.WriteLine("Ganó " + b.Nombre +" por puntos en fallo dividido");
+                        }
+                    }
+
                 break;
                 
                 case 4:
-                Console.WriteLine("Chau!");
+
+                    Console.WriteLine("Chau!");
+
                 break;
                 
                 Console.ReadKey();
@@ -101,7 +112,7 @@ class Program
     }
     static void Menu()
     {
-        Console.WriteLine("1.Cargar Datos Boxeador 1\n2.Cargar Datos Boxeador 2\n3.Pelear!\n4.Salir")
+        Console.WriteLine("1.Cargar Datos Boxeador 1\n2.Cargar Datos Boxeador 2\n3.Pelear!\n4.Salir");
     }
     static int IngresarEnteroPositivo(string mensaje)
     {

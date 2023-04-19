@@ -14,9 +14,9 @@ class Boxeador
         PotenciaGolpes=pG;
         VelocidadPiernas=vP;
     }
-    public int ObtenerSkill(int pG,int vP,int random)
+    public double ObtenerSkill(int pG,int vP,int random)
     {
-        int skill= 0,6*vP + 0,8*pG + random;
+        double skill= 0.6*vP + 0.8*pG + random;
         return skill;
     }
 }
